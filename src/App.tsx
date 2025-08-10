@@ -1,8 +1,12 @@
 import { Authenticated, Unauthenticated, AuthLoading, useCurrentUser } from './lib/auth'
 import { SignInForm } from './components/SignInForm'
+import { SignUpForm } from './components/SignUpForm'
 import { SignOutButton } from './components/SignOutButton'
+import { useState } from 'react'
 
 function App() {
+  const [isSignUp, setIsSignUp] = useState(false);
+  
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -18,9 +22,17 @@ function App() {
         <Unauthenticated>
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <h2 className="mb-6 text-center text-2xl font-medium text-gray-900">
-              Sign in to your account
+              {isSignUp ? 'Create your account' : 'Sign in to your account'}
             </h2>
-            <SignInForm />
+            {isSignUp ? <SignUpForm /> : <SignInForm />}
+            <div className="mt-4 text-center">
+              <button
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-indigo-600 hover:text-indigo-500 text-sm"
+              >
+                {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+              </button>
+            </div>
           </div>
         </Unauthenticated>
         
