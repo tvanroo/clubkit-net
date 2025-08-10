@@ -1,5 +1,6 @@
 import { Authenticated, Unauthenticated, AuthLoading, useCurrentUser } from './lib/auth'
-import { UsernameOrEmailForm, SignOutButton } from './lib/auth'
+import { SignInForm } from './components/SignInForm'
+import { SignOutButton } from './components/SignOutButton'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <h2 className="mb-6 text-center text-2xl font-medium text-gray-900">
               Sign in to your account
             </h2>
-            <UsernameOrEmailForm />
+            <SignInForm />
           </div>
         </Unauthenticated>
         
