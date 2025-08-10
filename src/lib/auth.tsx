@@ -1,7 +1,30 @@
-import { createAuth } from "@convex-dev/auth/react";
+import { useAuthActions } from "@convex-dev/auth/react";
+import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import type { ReactNode } from "react";
 
-export const { useAuthActions, useCurrentUser, AuthLoading, Authenticated, Unauthenticated } = createAuth(api.auth);
+// Custom auth components
+export function AuthLoading({ children }: { children: ReactNode }) {
+  return <div>{children}</div>;
+}
+
+export function Authenticated({ children }: { children: ReactNode }) {
+  const user = useCurrentUser();
+  if (!user) return null;
+  return <div>{children}</div>;
+}
+
+export function Unauthenticated({ children }: { children: ReactNode }) {
+  const user = useCurrentUser();
+  if (user) return null;
+  return <div>{children}</div>;
+}
+
+export function useCurrentUser() {
+  return useQuery(api.users.currentUser);
+}
+
+export { useAuthActions };
 
 // Username/Email Form Component
 export function UsernameOrEmailForm() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuthActions } from '../lib/auth';
 
 export function SignInForm() {
