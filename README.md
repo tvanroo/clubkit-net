@@ -1,11 +1,60 @@
-# React + TypeScript + Vite
+# ClubKit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern club management platform built with React, TypeScript, Vite, and Convex.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 **Authentication System**: Complete sign-up and sign-in functionality using @convex-dev/auth
+- ⚡ **Real-time Backend**: Powered by Convex for seamless data synchronization
+- 🎨 **Modern UI**: Built with React, TypeScript, and Tailwind CSS
+- 📱 **Responsive Design**: Works on all devices
+- 🚀 **Fast Development**: Vite for lightning-fast HMR
+
+## Tech Stack
+
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS
+- **Backend**: Convex
+- **Authentication**: @convex-dev/auth with password provider
+- **Deployment**: Vercel
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up your Convex backend: `npx convex dev`
+4. Start the development server: `npm run dev`
+
+## Environment Configuration
+
+- **Development**: Uses `https://outstanding-lemur-810.convex.cloud`
+- **Production**: Uses `https://prestigious-hare-405.convex.cloud`
+
+## Deployment
+
+- **Production URL**: https://clubkit-net.vercel.app
+- **Preview Deployments**: Automatically deployed on PR creation
+
+## Deployment Success Log
+
+### ✅ End-to-End Testing Completed - January 10, 2025
+
+**Test Results:**
+- ✅ Preview deployment configured with dev Convex environment
+- ✅ Production deployment configured with prod Convex environment  
+- ✅ Sign-up functionality tested and verified
+- ✅ Authentication system working correctly
+- ✅ Environment-specific Convex connections verified
+- ✅ Both preview and production deployments accessible
+- ✅ Initial release v0.1.0 ready for deployment
+
+**URLs Verified:**
+- Production: https://clubkit-net.vercel.app
+- Preview: Auto-generated Vercel preview URLs
+
+**Convex Environments:**
+- Development: `outstanding-lemur-810.convex.cloud`
+- Production: `prestigious-hare-405.convex.cloud`
 
 ## Expanding the ESLint configuration
 
